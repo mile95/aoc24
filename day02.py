@@ -11,14 +11,11 @@ def all_decreasing(ls):
     return True
 
 def is_safe(report, part_two):
-    levels = report.split()
-    levels = [int(level) for level in levels]
+    levels = [int(level) for level in report.split()]
     safe = all_decreasing(levels) or all_increasing(levels)
     if not safe and part_two:
         for i, v in enumerate(levels):
-            tmp = levels.copy()
-            del tmp[i]
-            if all_decreasing(tmp) or all_increasing(tmp):
+            if all_decreasing(levels[:i] + levels[i+1:]) or all_increasing(levels[:i] + levels[i+1:]):
                 return True
 
     return safe
