@@ -12,7 +12,6 @@ def solve(ops):
         ans, cands = line.split(":")
         ans = int(ans)
         cands = [int(c) for c in cands.split()]
-
         combs = ["".join(c) for c in list(product(ops, repeat=(len(cands)-1)))]
         for comb in combs:
             a = 0
