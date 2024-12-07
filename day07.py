@@ -13,8 +13,7 @@ def solve(ops):
         ans = int(ans)
         cands = [int(c) for c in cands.split()]
 
-        pairs = list(zip(cands, cands[1:]))
-        combs = ["".join(c) for c in list(product(ops, repeat=len(pairs)))]
+        combs = ["".join(c) for c in list(product(ops, repeat=(len(cands)-1)))]
         for comb in combs:
             a = 0
             for i, c in enumerate(comb):
