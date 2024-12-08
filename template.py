@@ -1,5 +1,5 @@
-
-DIRECTIONS = [(0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1)]
+from collections import defaultdict
+from itertools import combinations
 
 with open("input.txt") as f:
     lines = f.read().splitlines()
